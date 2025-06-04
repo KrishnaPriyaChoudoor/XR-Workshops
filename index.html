@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AR Resume with Button</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="cameraFog"></div>
+    <!-- 🟦 Button on Top Right -->
+    <button id="top-button">Contact</button>
+
+    <!-- 👈 PREV Button -->
+    <button id="prevBtn">&#x276E;</button>
+
+    <!-- 👉 NEXT Button -->
+    <button id="nextBtn">&#x276F;</button>
+
+    <!-- 🎥 AR Scene -->
+    <a-scene embedded arjs>
+      <!-- 🧿 Marker-tracked Content -->
+      <a-marker type="pattern" url="https://cdn.glitch.global/21e82aee-8605-452a-bcfd-607fd0017347/pattern-wproject.patt?v=1748845942258">
+        <!-- 🟪 Neutral Grey Background -->
+        <!--<a-plane
+          position="0 0.5 0"
+          rotation="-90 0 0"
+          width="2.5"
+          height="2.5"
+          color="#999999"
+          opacity="0.5"
+        >
+        </a-plane> -->
+        
+        <!-- 👤 Your Image -->
+        <a-image
+          id="carouselImage"
+          src="https://cdn.glitch.global/21e82aee-8605-452a-bcfd-607fd0017347/catdp.png?v=1747979842865"
+          position="0 0.3 0"
+          rotation="-90 0 0"
+          width="1.2"
+          height="1.2"
+        >
+        </a-image>
+
+        <!-- 🟡 Your Name -->
+        <a-text
+          id="carouselText"
+          value="Catto"
+          position="0 1 0.5"
+          rotation="-90 0 0"
+          color="#00FFE4"
+          width="3"
+          align="center"
+          font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"
+        >
+        </a-text>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+    <script src="script.js"></script>
+  </body>
+</html>
